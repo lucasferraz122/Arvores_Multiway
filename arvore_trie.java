@@ -124,4 +124,32 @@ private void listarapartirde(no atual, char[] buffer, int nivel) {
     }
 }
 
+    public static void main(String[] args) {
+        arvore_trie arvore = new arvore_trie();
+
+        arvore.inserir("casa");
+        arvore.inserir("carro");
+        arvore.inserir("cachorro");
+        arvore.inserir("café");
+        arvore.inserir("computação");
+        arvore.inserir("programa");
+        arvore.inserir("progresso");
+        arvore.inserir("prova");
+
+        System.out.println("buscar 'casa' -> " + arvore.buscar("casa"));
+        System.out.println("buscar 'carro' -> " + arvore.buscar("carro"));
+        System.out.println("buscar 'gato' -> " + arvore.buscar("gato"));
+
+        System.out.println("\nlista completa de palavras:");
+        arvore.listarcomprefixo(""); // listar todas as palavras
+
+        arvore.remover("carro");
+        System.out.println("\nlista após remover 'carro':");
+        arvore.listarcomprefixo("");
+
+        System.out.println("\npalavras com prefixo 'pro':");
+        arvore.listarcomprefixo("pro");
+    }
+}
+
 
