@@ -18,27 +18,50 @@ public class arvore_trie {
     }
 
     private int indice(char c) {
-    return c - 'a';
-}
+        return c - 'a';
+    }
 
     private String limpartextos(String s) {
-    if (s == null) return "";
-    s = s.toLowerCase();
-    char[] saida = new char[s.length()];
-    int tamsaida = 0;
-    for (int i = 0; i < s.length(); i++) {
-        char c = s.charAt(i);
-        if (c == 'á' || c == 'à' || c == 'â' || c == 'ã' || c == 'ä' || c == 'å') c = 'a';
-        else if (c == 'ç') c = 'c';
-        else if (c == 'é' || c == 'ê' || c == 'è' || c == 'ë') c = 'e';
-        else if (c == 'í' || c == 'ì' || c == 'î' || c == 'ï') c = 'i';
-        else if (c == 'ó' || c == 'ô' || c == 'õ' || c == 'ò' || c == 'ö') c = 'o';
-        else if (c == 'ú' || c == 'ù' || c == 'û' || c == 'ü') c = 'u';
-        if (c >= 'a' && c <= 'z') {
-            saida[tamsaida++] = c;
+        if (s == null) return "";
+        s = s.toLowerCase();
+        char[] saida = new char[s.length()];
+        int tamsaida = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == 'á' || c == 'à' || c == 'â' || c == 'ã' || c == 'ä' || c == 'å') c = 'a';
+            else if (c == 'ç') c = 'c';
+            else if (c == 'é' || c == 'ê' || c == 'è' || c == 'ë') c = 'e';
+            else if (c == 'í' || c == 'ì' || c == 'î' || c == 'ï') c = 'i';
+            else if (c == 'ó' || c == 'ô' || c == 'õ' || c == 'ò' || c == 'ö') c = 'o';
+            else if (c == 'ú' || c == 'ù' || c == 'û' || c == 'ü') c = 'u';
+            if (c >= 'a' && c <= 'z') {
+                saida[tamsaida++] = c;
+            }
         }
+        return new String(saida, 0, tamsaida);
     }
-    return new String(saida, 0, tamsaida);
-}
 
+    public void inserir(String palavra) {
+        palavra = limpartextos(palavra);
+        no atual = raiz;
+        for (int i = 0; i < palavra.length(); i++) {
+            int pos = indice(palavra.charAt(i));
+            if (atual.filhos[pos] == null) {
+                atual.filhos[pos] = new no();
+            }
+            atual = atual.filhos[pos];
+        }
+        atual.fimdapalavra = true;
+    }
+
+    public boolean buscar(String palavra) {
+        palavra = limpartextos(palavra);
+        no atual = raiz;
+        for (int i = 0; i < palavra.length(); i++) {
+            int pos = indice(palavra.charAt(i));
+            if (atual.filhos[pos] == null) return false;
+            atual = atual.filhos[pos];
+        }
+        return atual.fimdapalavra;
+    }
 }
