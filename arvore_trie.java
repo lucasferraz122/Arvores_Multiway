@@ -89,3 +89,9 @@ private boolean removerpasso(no atual, String palavra, int nivel) {
     return false;
 }
 
+private boolean semfilho(no n) {
+    for (int i = 0; i < tam_alfabeto; i++) {
+        if (n.filhos[i] != null) return false;
+    }
+    return true;
+}
