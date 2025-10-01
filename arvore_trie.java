@@ -65,3 +65,27 @@ public class arvore_trie {
         return atual.fimdapalavra;
     }
 }
+
+public boolean remover(String palavra) {
+    palavra = limpartextos(palavra);
+    return removerpasso(raiz, palavra, 0);
+}
+
+private boolean removerpasso(no atual, String palavra, int nivel) {
+    if (atual == null) return false;
+    if (nivel == palavra.length()) {
+        if (!atual.fimdapalavra) return false;
+        atual.fimdapalavra = false;
+        return semfilho(atual);
+    }
+    int pos = indice(palavra.charAt(nivel));
+    no filho = atual.filhos[pos];
+    if (filho == null) return false;
+    boolean apagarFilho = removerpasso(filho, palavra, nivel + 1);
+    if (apagarFilho) {
+        atual.filhos[pos] = null;
+        return !atual.fimdapalavra && semfilho(atual);
+    }
+    return false;
+}
+
