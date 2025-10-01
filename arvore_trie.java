@@ -95,3 +95,33 @@ private boolean semfilho(no n) {
     }
     return true;
 }
+    public void listarcomprefixo(String prefixo) {
+    prefixo = limpartextos(prefixo);
+    no atual = raiz;
+    for (int i = 0; i < prefixo.length(); i++) {
+        int pos = indice(prefixo.charAt(i));
+        if (atual.filhos[pos] == null) {
+            System.out.println("(nenhuma palavra encontrada com o prefixo informado)");
+            return;
+        }
+        atual = atual.filhos[pos];
+    }
+    char[] buffer = new char[tam_max_palvra];
+    for (int i = 0; i < prefixo.length(); i++) buffer[i] = prefixo.charAt(i);
+    listarapartirde(atual, buffer, prefixo.length());
+}
+
+private void listarapartirde(no atual, char[] buffer, int nivel) {
+    if (atual == null) return;
+    if (atual.fimdapalavra) {
+        System.out.println(new String(buffer, 0, nivel));
+    }
+    for (int i = 0; i < tam_alfabeto; i++) {
+        if (atual.filhos[i] != null) {
+            buffer[nivel] = (char) ('a' + i);
+            listarapartirde(atual.filhos[i], buffer, nivel + 1);
+        }
+    }
+}
+
+
