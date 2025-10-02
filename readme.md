@@ -84,3 +84,18 @@ A remoção da palavra `carro` foi bem-sucedida, sem afetar palavras que compart
 A função de listagem exibiu corretamente todas as palavras armazenadas.
 
 ---
+
+## Conclusão
+
+Este trabalho permitiu compreender a importância das árvores multiway em diferentes contextos, desde bancos de dados até sistemas de busca textual.  
+A implementação da **trie** em JAVA demonstrou ser viável mesmo com as restrições propostas, mostrando-se uma estrutura eficiente e de fácil compreensão.  
+A escolha pela trie foi motivada pela clareza e facilidade conceitual e pela aplicabilidade prática em problemas de busca por prefixo.
+
+---
+
+## Referências
+
+- CORMEN, T. H. et al. **Algoritmos: Teoria e Prática**. 3. ed. Rio de Janeiro: Elsevier, 2012.  
+- SEDGEWICK, R.; WAYNE, K. **Algorithms**. 4. ed. Boston: Addison-Wesley, 2011.  
+- KNUTH, D. E. **The Art of Computer Programming, Volume 3: Sorting and Searching**. 2. ed. Addison-Wesley, 1998.
+
