@@ -25,3 +25,20 @@ As árvores multiway são estruturas de dados que permitem que cada nó possua m
 Neste trabalho foi escolhida a **trie**, também conhecida como árvore de prefixos, para atender às exigências da atividade: implementação em JAVA, sem uso de estruturas prontas e com operações básicas de inserção, busca e remoção.
 
 ---
+
+## Fundamentação Teórica
+
+Existem diferentes tipos de árvores multiway, cada uma voltada para aplicações específicas:
+
+- **Árvore B**: Estrutura balanceada usada em bancos de dados e sistemas de arquivos, com operações em O(log n).  
+- **Árvore B+**: Variante da B-tree onde os dados ficam apenas nas folhas, facilitando consultas ordenadas.  
+- **Árvore B***: Melhora a taxa de ocupação dos nós por meio de redistribuição de chaves.  
+- **Árvore 2-3**: Cada nó tem 2 ou 3 filhos, mantendo balanceamento perfeito.  
+- **Árvore 2-3-4**: Extensão da 2-3, permitindo até 4 filhos por nó, base para árvores rubro-negras.  
+- **Trie**: Árvore de prefixos, utilizada para buscas textuais e autocompletar, operações em O(k), sendo k o tamanho da palavra.  
+- **Árvore Patrícia**: Versão comprimida da trie, que economiza memória eliminando nós com um único filho.  
+- **Árvore R**: Voltada para indexação espacial, onde cada nó cobre uma região retangular mínima.  
+- **Árvore R+**: Variação da R-tree que evita sobreposição, duplicando objetos quando necessário.  
+- **Quadtree**: Estrutura que divide o espaço em quatro quadrantes, usada em imagens e simulações 2D.
+
+---
