@@ -42,3 +42,45 @@ Existem diferentes tipos de árvores multiway, cada uma voltada para aplicaçõe
 - **Quadtree**: Estrutura que divide o espaço em quatro quadrantes, usada em imagens e simulações 2D.
 
 ---
+
+## Desenvolvimento
+
+A implementação foi realizada em **JAVA**, obedecendo às restrições de não utilizar estruturas prontas como `List` ou `ArrayList`, nem recursos como `StringBuilder` e exceções.  
+Para representar os filhos da trie, foram utilizados arrays fixos de tamanho 26 (para o alfabeto de A a Z).  
+Foram implementadas as funções de:
+
+- Inserção  
+- Busca  
+- Remoção  
+- Listagem de todas as palavras cadastradas  
+
+Também foi criada uma função de **normalização** para lidar com acentos e caracteres especiais.
+
+---
+
+## Como Executar
+
+1. **Baixar o arquivo**:
+   - Faça o download do arquivo `arvore_trie.java` do repositório GitHub
+     
+2. **Abrir em uma IDE** (IntelliJ, Eclipse ou NetBeans):
+   - Crie um novo projeto Java
+   - Adicione o arquivo `arvore_trie.java` ao projeto
+   - Execute o arquivo como aplicação Java
+     
+---
+
+## Resultados
+
+Os testes realizados incluíram a inserção de palavras como:
+
+- `casa`  
+- `carro`  
+- `cachorro`  
+- `café`  
+
+As operações de busca retornaram `verdadeiro` para palavras existentes e `falso` para palavras não cadastradas, como `gato`.  
+A remoção da palavra `carro` foi bem-sucedida, sem afetar palavras que compartilham prefixos, como `cachorro`.  
+A função de listagem exibiu corretamente todas as palavras armazenadas.
+
+---
